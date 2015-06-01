@@ -1,0 +1,23 @@
+This is WAV to MP3 encoder which is written in C with using pthread, m, lame 
+libs and supporting encoding folders with efficient parallel execution.
+
+How to build
+1. Linux
+Be sure that you have installed standard package of lame like (libmp3lame-dev)
+  or build it from sources.
+Run: make. As a result you would get encoder executible and test folder which
+  would contain multiple copies of test.wav file in project root.
+For testing run: ./encoder test 
+2. Windows
+Be sure that you have installed cygwin (should work with mingw, but has not been
+  tested) with all necessary stuff like gcc and make.
+Cygwin does not have lame in standard repo so you would need to download, build
+  and install it. Be noticed that when I was building I experienced a problem
+  with ./configure due not properly working config.guess file, I had to replace
+  it with more actual from /usr/share/automake-1.1x/config.guess.
+Run: make. As a result you would get encoder executable and test folder which
+  would contain multiple copies of test.wav file in project root.
+For testing run: ./encoder.exe test
+
+Project compiled with --static key so it should be possible to use it without
+  recompilation (linux and windows prebuilt is in archive).
